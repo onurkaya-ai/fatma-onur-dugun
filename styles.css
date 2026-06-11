@@ -1254,12 +1254,37 @@ a:hover {
     --section-padding: 60px 16px;
   }
 
+  .hero-names {
+    font-size: 3.2rem;
+  }
+  .hero-small-text {
+    font-size: 1.2rem;
+  }
+  .hero-date {
+    font-size: 1.15rem;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  .event-type {
+    font-size: 1.35rem;
+  }
+  .event-detail {
+    font-size: 0.95rem;
+  }
+
   .countdown-grid {
     gap: 8px;
   }
 
   .countdown-card {
     padding: 16px 6px;
+  }
+  .countdown-number {
+    font-size: 2rem;
   }
 
   .event-card {
@@ -1282,8 +1307,8 @@ a:hover {
   }
 
   .hero-couple-photo {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
   }
 
   .seal-hotspot {
