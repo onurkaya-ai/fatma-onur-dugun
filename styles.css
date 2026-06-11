@@ -1160,16 +1160,23 @@ a:hover {
   margin-bottom: 12px;
 }
 .btn-text {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--gold);
   font-weight: 600;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  padding: 10px 16px;
+  background: rgba(184, 141, 48, 0.08);
+  border-radius: 8px;
+  margin-top: 4px;
+  position: relative;
+  z-index: 10;
 }
 .btn-text:hover {
-  color: var(--gold-light);
+  background: rgba(184, 141, 48, 0.15);
+  color: var(--gold-dark);
 }
 
 @media (max-width: 480px) {
