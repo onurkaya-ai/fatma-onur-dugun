@@ -1173,6 +1173,7 @@ a:hover {
   margin-top: 4px;
   position: relative;
   z-index: 10;
+  cursor: pointer;
 }
 .btn-text:hover {
   background: rgba(184, 141, 48, 0.15);
