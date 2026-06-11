@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Fatma & Onur — Düğün Davetiyesi</title>
+  <meta name="description" content="Fatma & Onur'un düğün davetiyesi. Sizi de mutlu günümüzde aramızda görmekten büyük mutluluk duyarız." />
+  <meta property="og:title" content="Fatma & Onur — Düğün Davetiyesi" />
+  <meta property="og:description" content="Sizi de mutlu günümüzde aramızda görmekten büyük mutluluk duyarız." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#070b1a" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=8" />
+</head>
+<body class="no-scroll">
+
+  <!-- ========== GLOW TRANSITION OVERLAY ========== -->
+  <div class="glow-overlay" id="glowOverlay" aria-hidden="true"></div>
+
+  <!-- ========== ANIMATED STARFIELD ========== -->
+  <div id="starfield" aria-hidden="true"></div>
+
+  <!-- ========== WEBSITE LOOPING BACKGROUND VIDEO ========== -->
+  <video id="bodyBgVideo" autoplay loop muted playsinline class="body-bg-video" aria-hidden="true">
+    <source src="assets/body-bg.mp4?v=8" type="video/mp4" />
+  </video>
+
+  <!-- ========== COVER / VIDEO ENVELOPE OPENER ========== -->
+  <div id="cover" role="dialog" aria-label="Davetiye Mektubu">
+
+    <!-- Video Envelope Container (Fills the screen) -->
+    <div class="video-envelope-container" id="envelopeContainer">
+      
+      <!-- Hotspot directly over the wax seal in the center -->
+      <div class="seal-hotspot" id="sealHotspot"></div>
+
+      <!-- Dim Overlay (Fades in when hovering the seal) -->
+      <div class="envelope-dim-overlay" id="dimOverlay"></div>
+
+      <!-- Tap to Open Overlay -->
+      <div class="tap-to-open" id="tapToOpen">
+        <svg viewBox="0 0 24 28" class="tap-icon-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="overflow:visible;">
+          <defs>
+            <filter id="handShadow">
+              <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-color="#000" flood-opacity="0.35"/>
+            </filter>
+          </defs>
+          
+          <!-- Animated Highlight Circle -->
+          <circle cx="12" cy="10" r="5.5" fill="#5cbcd3" opacity="0.85" class="tap-highlight" />
+          <!-- Animated Outer Ripple -->
+          <circle cx="12" cy="10" r="10" fill="none" stroke="#ffffff" stroke-width="1" class="tap-circle-outer" />
+          
+          <!-- Elegant Pointing Hand Vector -->
+          <g filter="url(#handShadow)" transform="translate(4, 5.5)">
+            <path d="M8 13v-8.5a1.5 1.5 0 0 1 3 0v7.5" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11 11.5v-2a1.5 1.5 0 0 1 3 0v2.5" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 10.5a1.5 1.5 0 0 1 3 0v1.5" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 11.5a1.5 1.5 0 0 1 3 0v4.5a6 6 0 0 1 -6 6h-2a6 6 0 0 1 -5.012 -2.7L7 19c-1.3 -2.3 -2 -3 -2 -4.5v-1.5c0 -1.5 1 -2 2 -2c1.2 0 1.9 .8 2.5 1.5l1.5 2" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+        <span class="tap-text">Açmak İçin Dokunun</span>
+      </div>
+
+      <!-- Opening Video (Plays when clicked) -->
+      <video id="envelopeVideo" playsinline webkit-playsinline preload="auto">
+        <source src="assets/envelope-open.mp4?v=8#t=0.001" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+
+  <!-- ========== MUSIC TOGGLE ========== -->
+  <button id="musicToggle" class="music-toggle" aria-label="Müziği aç/kapat" title="Müziği aç/kapat">
+    ♫
+  </button>
+  <audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3?v=8" type="audio/mpeg" />
+  </audio>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="main-content">
+
+    <!-- ───── HERO SECTION ───── -->
+    <section class="hero-section section" id="hero">
+      <div class="hero-bg-image" aria-hidden="true"></div>
+      <img src="assets/couple.png?v=8" alt="Fatma ve Onur" class="hero-couple-photo reveal" />
+      <p class="hero-small-text reveal reveal-delay-1">Evleniyoruz</p>
+      <h2 class="hero-names reveal reveal-delay-2">
+        Fatma
+        <span class="hero-ampersand">&amp;</span>
+        Onur
+      </h2>
+      <p class="hero-date reveal reveal-delay-3">19 • 07 • 2026</p>
+      <p class="hero-quote reveal reveal-delay-4">
+        Aşk, iki ruhun birlikte dans ettiği sonsuz bir melodi…
+        Sizi de bu melodiye ortak olmaya davet ediyoruz.
+      </p>
+    </section>
+
+    <!-- ───── DIVIDER ───── -->
+    <div class="section-divider reveal"><span class="divider-icon">✦</span></div>
+
+    <!-- ───── ADD TO CALENDAR ───── -->
+    <section class="section calendar-section" id="calendar">
+      <h2 class="section-title reveal">Takviminize Ekleyin</h2>
+      <p class="section-subtitle reveal">Unutmayın!</p>
+
+      <div class="reveal">
+        <a id="calendarBtn" href="#" class="btn btn-gold" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Google Takvime Ekle
+        </a>
+      </div>
+    </section>
+
+    <!-- ───── DIVIDER ───── -->
+    <div class="section-divider reveal"><span class="divider-icon">✦</span></div>
+
+    <!-- ───── COUNTDOWN ───── -->
+    <section class="countdown-section section" id="countdown">
+      <h2 class="section-title reveal">Geri Sayım</h2>
+      <p class="section-subtitle reveal">Büyük güne ne kadar kaldı?</p>
+      <div class="countdown-grid reveal">
+        <div class="countdown-card">
+          <span class="countdown-number" id="cd-days">--</span>
+          <span class="countdown-label">Gün</span>
+        </div>
+        <div class="countdown-card">
+          <span class="countdown-number" id="cd-hours">--</span>
+          <span class="countdown-label">Saat</span>
+        </div>
+        <div class="countdown-card">
+          <span class="countdown-number" id="cd-minutes">--</span>
+          <span class="countdown-label">Dakika</span>
+        </div>
+        <div class="countdown-card">
+          <span class="countdown-number" id="cd-seconds">--</span>
+          <span class="countdown-label">Saniye</span>
+        </div>
+      </div>
+
+      <!-- Dynamic Weather Widget -->
+      <div class="weather-widget-container reveal reveal-delay-2" style="margin: 40px auto 0; display: flex; justify-content: center;">
+        <iframe src="https://api.wo-cloud.com/content/widget/?geoObjectKey=12747224&language=tr&region=TR&timeFormat=HH:mm&windUnit=kmh&systemOfMeasurement=metric&temperatureUnit=celsius" name="CW2" scrolling="no" width="318" height="318" frameborder="0" style="border: 1px solid #10658E;border-radius: 8px"></iframe>
+      </div>
+    </section>
+
+    <!-- ───── DIVIDER ───── -->
+    <div class="section-divider reveal"><span class="divider-icon">✦</span></div>
+
+    <!-- ───── EVENT DETAILS ───── -->
+    <section class="section" id="events">
+      <h2 class="section-title reveal">Etkinlik Detayları</h2>
+      <p class="section-subtitle reveal">Sizi bekliyoruz</p>
+
+      <div class="event-cards">
+        <!-- Erkek Evi Yemek & Konvoy -->
+        <div class="event-card reveal">
+          <div class="event-icon">🍽️</div>
+          <h3 class="event-type">Erkek Evinde Yemek &amp; Konvoy</h3>
+          <div class="event-detail">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>19 Temmuz 2026, Pazar</span>
+          </div>
+          <div class="event-detail">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Saat 13:00</span>
+          </div>
+          <div class="event-detail">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Alparslan Mahallesi Bafra Caddesi <br>Şirin Sokak No:5 <small>Bafra / Samsun</small></span>
+          </div>
+          <div class="event-detail note-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <span class="convoy-note">Düğün salonuna konvoy saat 18:00'da erkek evinden yapılacaktır. Konvoy öncesinde erkek evinde yemek verilecektir.</span>
+          </div>
+          
+          <div class="event-map" style="margin-top: 16px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1781171547235!6m8!1m7!1sbKws8p_j-sGxmJY2CuqUHA!2m2!1d41.61499457800259!2d35.60644329566964!3f122.52432567021843!4f-34.16526378491667!5f0.7820865974627469" width="100%" height="250" style="border:0; display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div class="event-actions">
+            <a href="https://maps.app.goo.gl/MJ5PWMAzmU8MGD3x7" target="_blank" rel="noopener" class="btn btn-gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Yol Tarifi
+            </a>
+          </div>
+        </div>
+
+        <!-- Düğün & Nikah -->
+        <div class="event-card reveal">
+          <div class="event-icon">💍</div>
+          <h3 class="event-type">Düğün &amp; Nikah Töreni</h3>
+          <div class="event-detail">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>19 Temmuz 2026, Pazar</span>
+          </div>
+          <div class="event-detail">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Saat 19:00 - 23:00</span>
+          </div>
+          <div class="event-detail">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Royal Garden Düğün Salonu <br><small>Delta Park Yaşam Tesisi (Köfteci Yusuf Yanı) Bafra / Samsun</small></span>
+          </div>
+          
+          <div class="event-map" style="margin-top: 16px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1781171934667!6m8!1m7!1s3d7xXHIqyCpWaco4mDl28w!2m2!1d41.52454995125822!2d35.96988537659434!3f21.214692914921862!4f-1.3524548564061263!5f0.7820865974627469" width="100%" height="250" style="border:0; display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div class="event-actions">
+            <a href="https://maps.app.goo.gl/3L36VXkYj8cAceiX9" target="_blank" rel="noopener" class="btn btn-gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Yol Tarifi
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───── DIVIDER ───── -->
+    <div class="section-divider reveal"><span class="divider-icon">✦</span></div>
+
+    <!-- ───── PHOTO GALLERY ───── -->
+    <section class="section" id="gallery">
+      <h2 class="section-title reveal">Fotoğraf Galerisi</h2>
+      <p class="section-subtitle reveal">Birlikte güzel anılar</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <img src="assets/gallery1.jpg" alt="Fotoğraf 1" loading="lazy" />
+        </div>
+        <div class="gallery-item reveal reveal-delay-1" onclick="openLightbox(this)">
+          <img src="assets/gallery3.jpg" alt="Fotoğraf 2" loading="lazy" />
+        </div>
+        <div class="gallery-item reveal reveal-delay-2" onclick="openLightbox(this)">
+          <img src="assets/gallery5.jpg" alt="Fotoğraf 3" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- ───── EXTRAS (GUIDE & UPLOAD) ───── -->
+      <div class="extras-grid" style="margin-top: 70px;">
+        
+        <!-- Places to visit -->
+        <div class="extra-card reveal">
+          <div class="extra-icon">🏞️</div>
+          <h3 class="extra-title">Gezilecek Yerler</h3>
+          <p class="extra-desc">Bafra'ya gelmişken Kuş Cenneti, Asarkale ve bölgenin diğer eşsiz güzelliklerini keşfedin.</p>
+          <button onclick="openGuideModal()" class="btn btn-gold btn-sm">Rehberi İncele</button>
+        </div>
+
+        <!-- Places to stay -->
+        <div class="extra-card reveal reveal-delay-1">
+          <div class="extra-icon">🏨</div>
+          <h3 class="extra-title">Konaklama</h3>
+          <p class="extra-desc">Şehir dışından gelecek misafirlerimiz için Bafra ve çevresindeki otel & pansiyon önerileri.</p>
+          <a href="https://www.google.com/maps/search/Bafra+otelleri" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Otelleri Gör</a>
+        </div>
+
+        <!-- Upload Memory -->
+        <div class="extra-card reveal reveal-delay-2">
+          <div class="extra-icon">📸</div>
+          <h3 class="extra-title">Anılarınızı Paylaşın</h3>
+          <p class="extra-desc">Düğünümüzde bizimle çektiğiniz en güzel kareleri buradan yükleyip ölümsüzleştirebilirsiniz.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScR_4Yb8SphIRKZCyegSEUy4Za7oGXuBrGsEjavu-CaLQrYrQ/viewform?usp=sharing&ouid=104098518089349711923" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Fotoğraf Yükle</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ───── LIGHTBOX ───── -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <button class="lightbox-close" aria-label="Kapat">&times;</button>
+      <img id="lightbox-img" src="" alt="Büyük görsel" />
+    </div>
+
+    <!-- ───── GUIDE MODAL ───── -->
+    <div id="guideModal" class="guide-modal" onclick="if(event.target===this) closeGuideModal()">
+      <div class="guide-modal-content">
+        <button class="guide-close" onclick="closeGuideModal()" aria-label="Kapat">&times;</button>
+        <h2 class="guide-title">Bafra Gezi Rehberi</h2>
+        <p class="guide-subtitle">Düğünümüze gelmişken bu güzellikleri keşfetmeden dönmeyin.</p>
+        
+        <div class="guide-timeline">
+          <div class="guide-item">
+            <div class="guide-icon">🦅</div>
+            <div class="guide-info">
+              <h4>Kızılırmak Deltası Kuş Cenneti</h4>
+              <p>Türkiye'nin en büyük deltalarından biri. Yüzlerce kuş türünü ve yaban atlarını doğal ortamında gözlemleyebilirsiniz.</p>
+              <a href="https://maps.app.goo.gl/tUf1Fp1Zp91N12y3A" target="_blank" rel="noopener" class="btn-text">📍 Yol Tarifi Al</a>
+            </div>
+          </div>
+
+          <div class="guide-item">
+            <div class="guide-icon">🏛️</div>
+            <div class="guide-info">
+              <h4>Asarkale ve Kaya Mezarları</h4>
+              <p>Kızılırmak vadisine hakim bir tepede bulunan Helenistik döneme ait kale ve Paflagonya tipi kaya mezarları.</p>
+              <a href="https://maps.app.goo.gl/zT676Z1B3bTqT9Jm8" target="_blank" rel="noopener" class="btn-text">📍 Yol Tarifi Al</a>
+            </div>
+          </div>
+
+          <div class="guide-item">
+            <div class="guide-icon">🌉</div>
+            <div class="guide-info">
+              <h4>Çetinkaya (Gelin) Köprüsü</h4>
+              <p>Kızılırmak üzerinde yer alan, tarihi ve hüzünlü hikayesiyle bilinen Cumhuriyet döneminin ilk büyük eserlerinden.</p>
+              <a href="https://maps.app.goo.gl/4N9gR89P29u7v8P69" target="_blank" rel="noopener" class="btn-text">📍 Yol Tarifi Al</a>
+            </div>
+          </div>
+
+          <div class="guide-item">
+            <div class="guide-icon">🥙</div>
+            <div class="guide-info">
+              <h4>Meşhur Bafra Pidesi</h4>
+              <p>İnce hamuru, çıtır yapısı ve bol malzemesiyle coğrafi işaretli Bafra pidesini anavatanında mutlaka tadın.</p>
+              <a href="https://www.google.com/maps/search/Bafra+pidesi/" target="_blank" rel="noopener" class="btn-text">📍 Pidecileri Gör</a>
+            </div>
+          </div>
+          
+          <div class="guide-item">
+            <div class="guide-icon">🍦</div>
+            <div class="guide-info">
+              <h4>Bafra Nokulu ve Dondurması</h4>
+              <p>Bol cevizli ve üzümlü meşhur Bafra Nokulu'nu ve yöresel dondurmayı tatlı bir mola için deneyebilirsiniz.</p>
+              <a href="https://www.google.com/maps/search/Bafra+nokul/" target="_blank" rel="noopener" class="btn-text">📍 Nereden Alınır?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- ───── FOOTER ───── -->
+    <footer class="footer">
+      <div class="footer-hearts">💕</div>
+      <p class="footer-text">Sizi aramızda görmekten mutluluk duyarız.</p>
+      <p class="footer-copy">Fatma & Onur © 2026</p>
+    </footer>
+
+  </main>
+
+  <!-- ========== TOAST ========== -->
+  <div id="toast" class="toast"></div>
+
+  <!-- ========== JS ========== -->
+  <script src="app.js?v=4"></script>
+</body>
+</html>
