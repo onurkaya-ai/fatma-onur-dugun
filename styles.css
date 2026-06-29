@@ -233,22 +233,29 @@ a:hover {
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
+  animation: sealPulse 2s infinite;
 }
 
-/* Dim overlay over the envelope image, fades in when hovering the seal */
+@keyframes sealPulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5); }
+  70% { box-shadow: 0 0 0 40px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+/* Dim overlay over the envelope image */
 .envelope-dim-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  opacity: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0.3;
   transition: opacity 0.35s ease;
   z-index: 3;
   pointer-events: none;
 }
 
-/* When the user hovers over the seal, dim the envelope image */
+/* When the user hovers over the seal, dim the envelope image further */
 .seal-hotspot:hover ~ .envelope-dim-overlay {
-  opacity: 1;
+  opacity: 0.6;
 }
 
 .tap-to-open {
@@ -263,13 +270,18 @@ a:hover {
   z-index: 4;
   transition: opacity 0.4s ease, transform 0.4s ease;
   pointer-events: none;
-  opacity: 0.95;
+  opacity: 1;
+  animation: floatTap 3s ease-in-out infinite;
+}
+
+@keyframes floatTap {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -54%) scale(1.05); }
 }
 
 /* Highlight the tap to open message when hovering the seal */
 .seal-hotspot:hover ~ .tap-to-open {
-  transform: translate(-50%, -50%) scale(1.05);
-  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* Custom Tap Icon Styles */
@@ -569,76 +581,47 @@ a:hover {
   z-index: 10;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  padding-bottom: 50px;
-  background: radial-gradient(circle at 50% 85%, rgba(184, 141, 48, 0.18) 0%, rgba(255, 255, 255, 0) 70%);
-  animation: overlayPulseFade 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  justify-content: center;
+  /* Tüm ekranı kaplayan soluk glow */
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 80%);
+  animation: overlayPulseFade 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   transition: opacity 0.5s ease;
 }
 
-.scroll-swipe-wave {
-  position: absolute;
-  bottom: -60px;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: linear-gradient(0deg, rgba(212, 175, 55, 0.22) 0%, rgba(255, 255, 255, 0) 100%);
-  filter: blur(15px);
-  animation: swipeWaveMove 3.5s ease-in-out forwards;
-}
-
-.scroll-gesture-pill {
-  width: 32px;
-  height: 54px;
-  border: 2px solid rgba(184, 141, 48, 0.55);
-  border-radius: 27px;
+.scroll-arrows-container {
   display: flex;
-  justify-content: center;
-  padding-top: 8px;
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  box-shadow: 0 4px 20px rgba(184, 141, 48, 0.25);
-  animation: pillPulse 3.5s ease-in-out forwards;
-  z-index: 2;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25vh; /* Yarıdan biraz aşağıda olsun ki aşağı kaydırma hissi versin */
 }
 
-.scroll-gesture-line {
-  width: 4px;
-  height: 12px;
-  background: var(--gold-dark);
-  border-radius: 4px;
-  animation: lineGlide 1.2s ease-in-out infinite;
+.scroll-arrow {
+  width: 64px;
+  height: 64px;
+  color: var(--gold-dark);
+  opacity: 0;
+  margin-top: -30px; /* Okları birbirinin içine hafifçe geçir */
 }
+
+.scroll-arrow.arrow-1 { animation: arrowCascade 2s infinite 0s; }
+.scroll-arrow.arrow-2 { animation: arrowCascade 2s infinite 0.3s; }
+.scroll-arrow.arrow-3 { animation: arrowCascade 2s infinite 0.6s; }
 
 @keyframes overlayPulseFade {
   0% { opacity: 0; }
   15% { opacity: 1; }
-  35% { opacity: 0.3; }
+  35% { opacity: 0.5; }
   55% { opacity: 1; }
-  75% { opacity: 0.3; }
+  75% { opacity: 0.5; }
   90% { opacity: 1; }
   100% { opacity: 0; visibility: hidden; }
 }
 
-@keyframes swipeWaveMove {
-  0% { transform: translateY(60px); opacity: 0; }
-  40% { transform: translateY(-40px); opacity: 0.8; }
-  70% { transform: translateY(-90px); opacity: 0.4; }
-  100% { transform: translateY(-150px); opacity: 0; }
-}
-
-@keyframes pillPulse {
-  0%, 100% { transform: scale(0.95); }
-  50% { transform: scale(1.06); }
-}
-
-@keyframes lineGlide {
-  0% { transform: translateY(0); opacity: 1; }
-  70% { transform: translateY(16px); opacity: 0.1; }
-  100% { transform: translateY(0); opacity: 0; }
+@keyframes arrowCascade {
+  0% { opacity: 0; transform: translateY(-15px) scale(0.9); }
+  50% { opacity: 0.7; transform: translateY(0) scale(1.1); }
+  100% { opacity: 0; transform: translateY(15px) scale(0.9); }
 }
 
 /* ============================================
