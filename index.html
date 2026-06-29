@@ -2,7 +2,11 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <!-- iOS Web App -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
 
   <!-- SEO -->
   <title>Fatma & Onur — Düğün Davetiyesi</title>
@@ -13,7 +17,7 @@
   <meta name="theme-color" content="#070b1a" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=13" />
+  <link rel="stylesheet" href="styles.css?v=14" />
 </head>
 <body class="no-scroll">
 
@@ -98,6 +102,19 @@
         Aşk, iki ruhun birlikte dans ettiği sonsuz bir melodi…
         Sizi de bu melodiye ortak olmaya davet ediyoruz.
       </p>
+
+      <!-- Scroll Down Indicator -->
+      <div class="scroll-indicator reveal reveal-delay-4" id="scrollIndicator">
+        <span class="scroll-text">Keşfetmek için kaydırın</span>
+        <div class="scroll-chevrons">
+          <svg class="scroll-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+          <svg class="scroll-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      </div>
     </section>
 
     <!-- ───── DIVIDER ───── -->
@@ -353,6 +370,6 @@
   <div id="toast" class="toast"></div>
 
   <!-- ========== JS ========== -->
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>

@@ -80,6 +80,8 @@
   // ─── COVER OPEN ───────────────────────────────────────────
   function openCover() {
     document.body.classList.remove('no-scroll');
+    // Re-enable touch scrolling after cover opens
+    document.body.style.touchAction = '';
     cover.classList.add('opened');
     mainContent.classList.add('visible');
     musicToggle.classList.add('visible');
@@ -272,6 +274,12 @@
         el.classList.add('revealed');
       }
     });
+
+    // Hide scroll indicator after user scrolls past hero
+    const scrollIndicator = document.getElementById('scrollIndicator');
+    if (scrollIndicator && window.scrollY > 80) {
+      scrollIndicator.classList.add('hidden');
+    }
   }
 
   // ─── TOAST NOTIFICATION ──────────────────────────────────
