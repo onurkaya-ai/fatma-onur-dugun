@@ -471,14 +471,13 @@ a:hover {
    HERO SECTION
    ============================================ */
 .hero-section {
-  min-height: 100vh;
-  min-height: 100dvh; /* Dynamic viewport height for mobile */
+  min-height: 85vh;
+  min-height: 85dvh; /* Allows next content to peek at bottom of screen */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 20px;
-  padding-bottom: 40px;
+  padding: 60px 20px 20px;
   position: relative;
   overflow: hidden;
 }
@@ -556,79 +555,6 @@ a:hover {
   color: var(--gold);
   font-weight: 700;
   font-size: 1.3em;
-}
-
-/* ============================================
-   SCROLL DOWN INDICATOR
-   ============================================ */
-.scroll-indicator {
-  margin-top: auto;
-  padding-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  animation: fadeInIndicator 1.5s ease 1.8s both;
-}
-
-.scroll-text {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--gold-dark);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  opacity: 0.7;
-}
-
-.scroll-chevrons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.scroll-chevron {
-  width: 22px;
-  height: 22px;
-  color: var(--gold);
-  opacity: 0.6;
-  animation: scrollBounce 2s ease-in-out infinite;
-}
-
-.scroll-chevron:nth-child(2) {
-  margin-top: -8px;
-  opacity: 0.35;
-  animation-delay: 0.15s;
-}
-
-@keyframes scrollBounce {
-  0%, 100% {
-    transform: translateY(0);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(8px);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInIndicator {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Hide indicator once user starts scrolling */
-.scroll-indicator.hidden {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  pointer-events: none;
 }
 
 /* ============================================
@@ -1379,9 +1305,9 @@ a:hover {
   }
 
   .hero-section {
-    padding: 60px 16px 30px;
-    min-height: 100vh;
-    min-height: 100dvh;
+    padding: 50px 16px 20px;
+    min-height: 82vh;
+    min-height: 82dvh;
   }
 
   .hero-names {
@@ -1449,19 +1375,6 @@ a:hover {
   .tap-icon-svg {
     width: 54px;
     height: 63px;
-  }
-
-  /* Scroll indicator mobile sizing */
-  .scroll-indicator {
-    padding-top: 20px;
-  }
-  .scroll-text {
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-  }
-  .scroll-chevron {
-    width: 18px;
-    height: 18px;
   }
 
   /* Weather widget mobile fit */

@@ -274,12 +274,6 @@
         el.classList.add('revealed');
       }
     });
-
-    // Hide scroll indicator after user scrolls past hero
-    const scrollIndicator = document.getElementById('scrollIndicator');
-    if (scrollIndicator && window.scrollY > 80) {
-      scrollIndicator.classList.add('hidden');
-    }
   }
 
   // ─── TOAST NOTIFICATION ──────────────────────────────────
