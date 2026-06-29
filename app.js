@@ -274,6 +274,12 @@
         el.classList.add('revealed');
       }
     });
+
+    const scrollOverlay = document.getElementById('scrollOverlay');
+    if (scrollOverlay && window.scrollY > 40) {
+      scrollOverlay.style.opacity = '0';
+      scrollOverlay.style.pointerEvents = 'none';
+    }
   }
 
   // ─── TOAST NOTIFICATION ──────────────────────────────────
