@@ -846,6 +846,9 @@ a:hover {
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   margin-top: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .gallery-item {
