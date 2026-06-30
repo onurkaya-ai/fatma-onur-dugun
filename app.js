@@ -333,8 +333,10 @@
           bodyBgVideo.play().catch(e => console.log("Body bg video play failed:", e));
         }
 
-        // Hide "Tap to Open" overlay
+        // Hide "Tap to Open" and "Dim Overlay" so the video is bright
         if (tapToOpen) tapToOpen.style.opacity = '0';
+        const dimOverlay = document.getElementById('dimOverlay');
+        if (dimOverlay) dimOverlay.style.opacity = '0';
 
         // 10-second backup timeout (in case the video file fails to play)
         let backupTimeout = setTimeout(() => {
